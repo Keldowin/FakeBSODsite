@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #000;
+            scrollbar-width: none; /*mozilla*/
+        }
+
+        video {
+            width: 100%;
+            position: fixed;
+        }
+    </style>
+</head>
+<body>
+<body>
+    <video autoplay muted loop>
+        <source id="video_m" src="Windows 10 экран загрузки.mp4" type='video/ogg;'>
+    </video>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+function launchFullScreen(element) {
+    if(element.requestFullScreen) {
+      element.requestFullScreen();
+    } else if(element.mozRequestFullScreen) {
+      element.mozRequestFullScreen();
+    } else if(element.webkitRequestFullScreen) {
+      element.webkitRequestFullScreen();
+    }
+  }
+$(window).on("load", function() {
+    launchFullScreen(video_m);
+});
+    </script>
+</body>
+</html>
